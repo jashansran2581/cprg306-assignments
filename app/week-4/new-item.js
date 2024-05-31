@@ -9,9 +9,6 @@ const New_Item = () => {
 
   const submitFunction = (event) => {
     event.preventDefault();
-    setterName('');
-    setterQuantity(1);
-    setterCategory('produce');
     alert(`Item Name: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
   };
   
@@ -19,19 +16,20 @@ const New_Item = () => {
   return (
     <form onSubmit={submitFunction} className="p-6 rounded-lg shadow-md w-1/4 bg-slate-600">
       <div className="mb-4">
-        <input type="text" id="name" value={name} onChange={(e) => setterName(e.target.value)} required
+        <input type="text" id="name" value={name} placeholder="naem" onChange={(e) => setterName(String(e.target.value))} required
           className="mt-1 p-2 w-full border rounded-md"
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-4 float-left w-1/3">
         <input type="number" id="quantity" min="1" max="99" value={quantity} onChange={(e) => setterQuantity(Number(e.target.value))}
           required
-          className="mt-1 p-2 w-full border rounded-md"
+          className="mt-1 p-2 w-full border rounded-md" 
         />
       </div>
-      <div className="mb-4">
-        <select id="category" value={category} onChange={(e) => setterCategory(e.target.value)} className="mt-1 p-2 w-full border rounded-md"
+      <div className="mb-4 float-right w-1/3">
+        <select id="category" value={category} onChange={(e) => setterCategory(String(e.target.value))} className="mt-1 p-2 w-full border rounded-md"
         >
+          <option value="" disabled>Category</option>
           <option value="produce">Produce</option>
           <option value="dairy">Dairy</option>
           <option value="bakery">Bakery</option>
@@ -45,7 +43,7 @@ const New_Item = () => {
           <option value="other">Other</option>
         </select>
       </div>
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">Add Item</button>
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded-md w-full clear-both">+</button>
     </form>
   );
 };
