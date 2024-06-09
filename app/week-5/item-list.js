@@ -1,58 +1,29 @@
-// import React from "react";
-// import Item from "./item";
-// import React, { useState } from "react";
-
-// const ItemList = () => {
-  
-//   const [sortBy, setSortBy] = useState("name");
-
-
-//   return (
-//     <ul className="">
-//       {items.map((item, index) => (
-//         <Item key={index} {...item} />
-//       ))}
-//     </ul>
-//   );
-// };
-
-// export default ItemList;
 "use client";
-import React, { useState } from "react";
-import Item from "./item";
-import items from "./items.json";
+import React, { useState } from 'react';
+import Item from './item';
+import items from './items.json';
 
 const ItemList = () => {
   const [sortBy, setSortBy] = useState("name");
-
-  const sortedItems = [...items].sort((a, b) => {
-    if (sortBy === "name") {
-      return a.name.localeCompare(b.name);
-    } else if (sortBy === "category") {
-      return a.category.localeCompare(b.category);
-    }
-    return 0;
-  });
+  const sortedItems = Array.from(items).sort((a, b) => 
+  sortBy === 'name' ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
+  );
 
   return (
     <div>
       <div className="mb-4">
-        <button
-          onClick={() => setSortBy("name")}
-          className={`mr-2 p-2 ${sortBy === "name" ? "bg-blue-500 text-white" : "bg-gray-200"}`}
-        >
-          Sort by Name
-        </button>
-        <button
-          onClick={() => setSortBy("category")}
-          className={`p-2 ${sortBy === "category" ? "bg-blue-500 text-white" : "bg-gray-200"}`}
-        >
-          Sort by Category
-        </button>
+        <label for="sort">Sort by: </label>
+        <button onClick={() => setSortBy("name")} className={`mr-2 p-3 ${sortBy === "name" ? "bg-orange-600 text-white" : "bg-orange-300"}`}>Name</button>
+        <button onClick={() => setSortBy("category")}className={`p-3 ${sortBy === "category" ? "bg-orange-600 text-white" : "bg-orange-300"}`}>Category</button>
       </div>
-      <ul>
+      <ul className="">
         {sortedItems.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item
+            key={item.id}
+            name={item.name}
+            quantity={item.quantity}
+            category={item.category}
+          />
         ))}
       </ul>
     </div>
