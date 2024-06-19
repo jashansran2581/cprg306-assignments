@@ -10,15 +10,15 @@ const inter = Inter({
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
+    <div lang="en" className={inter.variable}>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My Page</title>
       </head>
-      <body className={inter.variable}>
+      <body>
         {children}
       </body>
-    </html>
+    </div>
   );
 }

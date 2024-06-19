@@ -17,10 +17,10 @@ export default function Component() {
           </div>
           <input id="password" type="password" className="mt-1 p-2 w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required />
         </div>
-        <button type="submit" className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">Login</button>
+        <button type="submit"  className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">Login</button>
         <div className="mt-4 flex items-center justify-center">
           <span className="text-gray-600">Don't have an account?</span>
-          <a href="#" className="ml-1 text-sm font-medium text-indigo-600 hover:text-indigo-500">Sign up</a>
+          <a href="/page.js" className="ml-1 text-sm font-medium text-indigo-600 hover:text-indigo-500">Sign up</a>
         </div>
       </div>
     </div>

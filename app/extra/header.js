@@ -8,13 +8,23 @@ export default function Header() {
         <h1 className="text-xl font-semibold">My Website</h1>
         <ul className="flex space-x-4">
           <li>
-            <Link href="/">
-              <a className="hover:text-gray-300">Home</a>
+            <Link href="/" className="hover:text-gray-300 ml-2">
+              Home
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a className="hover:text-gray-300">About</a>
+            <Link href="/" className="hover:text-gray-300 ml-2">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/" className="hover:text-gray-300 ml-2">
+              profile
+            </Link>
+          </li>
+          <li>
+            <Link href="/" className="hover:text-gray-300 ml-2">
+              login
             </Link>
           </li>
           {/* Add more navigation items as needed */}
