@@ -2,14 +2,14 @@ import React from 'react';
 import Layout from './layout';
 import Footer from './footer';
 import Header from './header';
-import Listings from './listings';
+import Listings_details from './listings_details';
 
 const Page = () => {
   return (
     <main className="">
       <Header />
       <Layout />
-      <Listings />
+      <Listings_details />
       <Footer />
     </main>
   );

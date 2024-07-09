@@ -2,16 +2,73 @@ import Image from "next/image";
 
 export default function Profile() {
   const listings = [
-    { id: 1, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Cozy Mountain Cabin", location: "Aspen, Colorado", price: 250 },
-    { id: 2, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Beachfront Villa", location: "Maui, Hawaii", price: 500 },
-    { id: 3, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Modern Loft", location: "Seattle, Washington", price: 150 },
-    { id: 4, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Rustic Farmhouse", location: "Napa, California", price: 300 },
-    { id: 5, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Treehouse Retreat", location: "Asheville, North Carolina", price: 225 },
-    { id: 7, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Cozy Mountain Cabin", location: "Aspen, Colorado", price: 250 },
-    { id: 8, image: "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png", title: "Beachfront Villa", location: "Maui, Hawaii", price: 500 }
+    {
+      id: 1,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Cozy Mountain Cabin",
+      location: "Aspen, Colorado",
+      price: 250,
+    },
+    {
+      id: 2,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Beachfront Villa",
+      location: "Maui, Hawaii",
+      price: 500,
+    },
+    {
+      id: 3,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Modern Loft",
+      location: "Seattle, Washington",
+      price: 150,
+    },
+    {
+      id: 4,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Rustic Farmhouse",
+      location: "Napa, California",
+      price: 300,
+    },
+    {
+      id: 5,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Treehouse Retreat",
+      location: "Asheville, North Carolina",
+      price: 225,
+    },
+    {
+      id: 7,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Cozy Mountain Cabin",
+      location: "Aspen, Colorado",
+      price: 250,
+    },
+    {
+      id: 8,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Beachfront Villa",
+      location: "Maui, Hawaii",
+      price: 500,
+    },
+    {
+      id: 9,
+      image:
+        "https://c3-global-bucket.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/06/airbng-new-1024x583.png",
+      title: "Modern Loft",
+      location: "Seattle, Washington",
+      price: 150,
+    },
   ];
   return (
-    <div>
+    <div className="mt-40">
       <div className="flex">
         <div className="p-6 w-1/2">
           <h1 className="text-4xl font-bold justify-center">Profile</h1>
@@ -48,25 +105,30 @@ export default function Profile() {
           <h1 className="text-4xl font-bold text-center justify-center">
             Listings
           </h1>
-          <div className="flex flex-wrap -mx-2">
-      {listings.map((listing) => (
-        <div key={listing.id} className="w-1/2 p-2">
-          <div className="bg-teal-600">
+          <div className="flex flex-wrap gap-4 justify-center mt-10">
+        {listings.map((listing) => (
+          <div
+            key={listing.id}
+            className="w-[calc(50%-20px)] bg-white shadow-lg rounded-lg overflow-hidden mb-4"
+          >
             <div className="relative" style={{ paddingTop: "56.25%" }}>
-              <img src={listing.image} alt={listing.title} className="absolute inset-0 w-full h-full object-cover" />
+              <img
+                src={listing.image}
+                alt={listing.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
-            <div className="p-2 text-white">
-              <h3 className="font-bold">{listing.title}</h3>
-              <p>{listing.location}</p>
-              <p>${listing.price}/night</p>
+            <div className="p-4">
+              <h3 className="text-xl font-bold">{listing.title}</h3>
+              <p className="text-gray-600">{listing.location}</p>
+              <p className="text-gray-900 font-semibold">${listing.price}/night</p>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-        </div>
+        ))}
+      </div>
         </div>
       </div>
+    </div>
   );
 }
 

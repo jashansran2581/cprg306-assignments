@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ListingsDetails() {
   return (
-    <div className="w-full max-w-6xl mx-auto py-12 md:py-16 lg:py-20">
+    <div className="w-full max-w-6xl mx-auto py-12 md:py-16 lg:py-20 mt-40">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div className="space-y-6">
           <div>
